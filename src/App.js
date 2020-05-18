@@ -1,6 +1,5 @@
 import React from 'react';
-
-import './App.css';
+import { GlobalProvider } from './context/GlobalState';
 import {
   Header,
   Balance,
@@ -8,10 +7,11 @@ import {
   TransactionList,
   AddTransaction,
 } from './components';
+import './App.css';
 
 function App() {
   return (
-    <div>
+    <GlobalProvider>
       <Header />
       <div className='container'>
         <Balance />
@@ -19,7 +19,7 @@ function App() {
         <TransactionList />
         <AddTransaction />
       </div>
-    </div>
+    </GlobalProvider>
   );
 }
 
